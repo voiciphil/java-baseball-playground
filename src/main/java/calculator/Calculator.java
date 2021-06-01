@@ -11,20 +11,26 @@ public class Calculator {
     public Calculator(String expression) {
         numbers = new ArrayList<>();
         operators = new ArrayList<>();
+
         String[] splits = expression.split(" ");
         for (int i = 0; i < splits.length; i++) {
-            if (i % 2 == 0) {
-                numbers.add(Integer.parseInt(splits[i]));
-                continue;
-            }
-            if (isNotOperator(splits[i])) {
-                throw new IllegalArgumentException();
-            }
-            operators.add(splits[i]);
+            collect(splits[i], i);
         }
+
         if (numbers.size() - 1 != operators.size()) {
             throw  new IllegalArgumentException();
         }
+    }
+
+    private void collect(String split, int index) {
+        if (index % 2 == 0) {
+            numbers.add(Integer.parseInt(split));
+            return;
+        }
+        if (isNotOperator(split)) {
+            throw new IllegalArgumentException();
+        }
+        operators.add(split);
     }
 
     private boolean isNotOperator(String operator) {
