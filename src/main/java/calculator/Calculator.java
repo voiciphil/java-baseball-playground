@@ -14,7 +14,7 @@ public class Calculator {
 
         String[] splits = expression.split(" ");
         for (int i = 0; i < splits.length; i++) {
-            collect(splits[i], i);
+            classify(splits[i], i);
         }
 
         if (numbers.size() - 1 != operators.size()) {
@@ -22,7 +22,7 @@ public class Calculator {
         }
     }
 
-    private void collect(String split, int index) {
+    private void classify(String split, int index) {
         if (index % 2 == 0) {
             numbers.add(Integer.parseInt(split));
             return;
