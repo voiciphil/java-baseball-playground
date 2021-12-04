@@ -55,7 +55,7 @@ public class NumberBoard {
         int ball = 0;
 
         for (int i = 0; i < DIGIT; i++) {
-            ball = isBall(input, i);
+            ball += isBall(input, i);
         }
 
         return ball - calculateStrike(input);
