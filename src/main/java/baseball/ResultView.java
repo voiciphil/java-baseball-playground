@@ -2,7 +2,10 @@ package baseball;
 
 public class ResultView {
 
-    public static void printResult(int strike, int ball) {
+    public static void printResult(Result result) {
+        int strike = result.getStrike();
+        int ball = result.getBall();
+
         if (strike == 0 && ball == 0) {
             System.out.println("OUT");
             return;
