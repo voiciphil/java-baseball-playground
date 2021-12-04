@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class NumberBoard {
 
-    private static final int DIGIT = 3;
+    public static final int DIGIT = 3;
 
     private String number;
 

@@ -17,4 +17,8 @@ public class Result {
     public int getBall() {
         return ball;
     }
+
+    public boolean isSuccess() {
+        return strike == NumberBoard.DIGIT;
+    }
 }
